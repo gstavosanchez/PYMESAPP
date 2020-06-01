@@ -1,0 +1,40 @@
+﻿@model F2_201801351.Models.detalleBodegaProducto
+
+@{
+    ViewBag.Title = "Lotes";
+}
+
+<fieldset>
+    <legend>
+        Gestion de costos por Lotes
+    </legend>
+    @using (Html.BeginForm("Lotes", "Costos", FormMethod.Post))
+    { 
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    @Html.LabelFor(m => m.formaLote)
+                    @Html.TextBoxFor(m => m.formaLote, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.formaLote, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.idProducto)
+                    @Html.DropDownListFor(m => m.idProducto, new SelectList(Model.listaProducto, "id", "nombre"), "Seleccion el Producto", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.idProducto, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    <br />
+                    @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                </div>
+                <br />
+                <div style="text-align:left">
+                    <input value="Guardar" class="btn btn-success" type="submit">
+                    <input value="Reset" class="btn btn-warning" type="reset">
+                </div>
+            </div>
+            
+        </div>
+    
+    }
+</fieldset>
+

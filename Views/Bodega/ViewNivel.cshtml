@@ -1,0 +1,31 @@
+﻿@model List<F2_201801351.Models.NivelModel>
+@{
+    ViewBag.Title = "ViewNivel";
+}
+
+<fieldset>
+    <legend>
+        Listado de Niveles
+    </legend>
+    <div class="row">
+        @foreach (var m in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="https://image.flaticon.com/icons/svg/66/66755.svg" alt="..." height="200" width="200">
+                    <div class="caption">
+                        <h3>Codigo: @m.codigo </h3>
+                        <p>Medidas:@m.ancho X @m.largo m</p>
+                        <p>Codigo Estante:@m.idEstante</p>
+                        <p><a class="btn btn-danger" href="~/Home/New/@m.idNivel">Eliminar</a> </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        }
+
+    </div>
+</fieldset>
+

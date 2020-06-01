@@ -1,0 +1,19 @@
+﻿@if (Session["Email"] != null)
+{
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            @Html.ActionLink("Producto", "Index", "Producto", null, null)
+        </li>
+
+        <li>
+            @Html.ActionLink("Inventario", "Index", "Inventario", null, null)
+        </li>
+    </ul>
+
+
+}
+else
+{
+    
+
+}

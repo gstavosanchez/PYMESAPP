@@ -1,0 +1,33 @@
+﻿@model List<F2_201801351.Models.ListaPrecioModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<fieldset>
+    <legend>
+        Suscribite
+    </legend>
+    <div class="row">
+        @foreach (var m in Model)
+        {
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="https://i.ya-webdesign.com/images/como-editar-imagenes-png.png" alt="..." height="200" width="200">
+                    <div class="caption">
+                        <h3>@m.abreviatura</h3>
+                        <p>@m.nombre</p>
+                        <p>Forma de Pago:@m.suscripcion</p>
+                        <p>Precio:Q. @m.precio</p>
+                        <p><a class="btn btn-success" href="~/Home/New/@m.idLista">Adquirir</a> </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        }
+
+
+    </div>
+</fieldset>
+

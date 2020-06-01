@@ -1,0 +1,42 @@
+﻿@model F2_201801351.Models.DetalleSalida
+@{
+    ViewBag.Title = "Salida";
+}
+<fieldset>
+    <legend>
+        Salida
+    </legend>
+    @using (Html.BeginForm("Salida", "Transaccion", FormMethod.Post))
+    { 
+      <div class="row">
+          <div class="col-md-12">
+              <div>
+                  @Html.LabelFor(m => m.cliente)
+                  @Html.TextBoxFor(m => m.cliente, "", new { @class = "form-control" })
+                  @Html.ValidationMessageFor(m => m.cliente, null, new { @class = "text text-danger" })
+              </div>
+              <div>
+                  @Html.LabelFor(m => m.cantidad)
+                  @Html.TextBoxFor(m => m.cantidad, "", new { @class = "form-control" })
+                  @Html.ValidationMessageFor(m => m.cantidad, null, new { @class = "text text-danger" })
+              </div>
+              <div>
+                  @Html.LabelFor(m => m.idDetalleEntrada)
+                  @Html.DropDownListFor(m => m.idDetalleEntrada, new SelectList(Model.listaDetalleEntrada, "idDetalleEntrada", "nombreProducto"), "Seleccion el Producto", new { @class = "form-control" })
+                  @Html.ValidationMessageFor(m => m.idDetalleEntrada, null, new { @class = "text text-danger" })
+              </div>
+              <div>
+                  <br />
+                  @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+              </div>
+              <br />
+              <div style="text-align:left">
+                  <input value="Guardar" class="btn btn-success" type="submit">
+                  <input value="Reset" class="btn btn-warning" type="reset">
+              </div>
+          </div>
+      </div>  
+        
+    }
+    </fieldset>
+

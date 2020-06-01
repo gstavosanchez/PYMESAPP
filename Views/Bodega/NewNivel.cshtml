@@ -1,0 +1,38 @@
+﻿@model F2_201801351.Models.NivelModel
+@{
+    ViewBag.Title = "NewNivel";
+}
+
+<fieldset>
+    <legend>
+        Nuevo Nivel
+    </legend>
+    @using (Html.BeginForm("NewNivel", "Bodega", FormMethod.Post))
+    { 
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    @Html.LabelFor(m => m.codigo)
+                    @Html.TextBoxFor(m => m.codigo, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.codigo, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.idEstante)
+                    @Html.TextBoxFor(m => m.idEstante, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.idEstante, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    <br />
+                    @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                </div>
+                <br />
+                <div style="text-align:right">
+                    <input value="Guardar" class="btn btn-primary" type="submit">
+                    <input value="Reset" class="btn btn-warning" type="reset">
+                </div>
+            </div>
+        </div>
+    
+    }
+</fieldset>
+

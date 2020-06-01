@@ -1,0 +1,56 @@
+﻿@model F2_201801351.Models.DetalleEntrada
+@{
+    ViewBag.Title = "UpdateUbicacion";
+}
+
+    <fieldset>
+        <legend>
+            Actualizar Ubicacion
+        </legend>
+        @using (Html.BeginForm("UpdateUbicacion", "Transaccion", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        @Html.HiddenFor(m => m.idDetalleEntrada)
+                        @Html.LabelFor(m => m.cantidad)
+                        @Html.TextBoxFor(m => m.cantidad, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.cantidad, null, new { @class = "text text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.idBodega)
+                        @Html.DropDownListFor(m => m.idBodega, new SelectList(Model.listaBodega, "idBodega", "nombre"), "Seleccion de Bodega", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.idBodega, null, new { @class = "text text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.idPasillo)
+                        @Html.DropDownListFor(m => m.idPasillo, new SelectList(Model.listaPasillo, "idPasillo", "codigo"), "Seleccion de Pasillo", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.idPasillo, null, new { @class = "text text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.idEstante)
+                        @Html.DropDownListFor(m => m.idEstante, new SelectList(Model.listaEstante, "idEstante", "codigo"), "Seleccion de Estante", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.idEstante, null, new { @class = "text text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.idNivel)
+                        @Html.DropDownListFor(m => m.idNivel, new SelectList(Model.listaNivel, "idNivel", "codigo"), "Seleccion de Nivel", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.idNivel, null, new { @class = "text text-danger" })
+                    </div>
+
+                    <div>
+                        <br />
+                        @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                    </div>
+                    <br />
+                    <div style="text-align:left">
+                        <input value="Actualizar" class="btn btn-success" type="submit">
+                        <input value="Reset" class="btn btn-warning" type="reset">
+                    </div>
+                </div>
+            </div>
+
+
+        }
+    </fieldset>
+

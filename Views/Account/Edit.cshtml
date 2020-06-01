@@ -1,0 +1,56 @@
+﻿@model F2_201801351.Models.UsuarioModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<fieldset>
+    <legend>
+        Editar Usuario
+    </legend>
+    @using (Html.BeginForm("Edit", "Account", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                @Html.HiddenFor(m => m.id)
+                <div>
+                    @Html.LabelFor(m => m.nombre)
+                    @Html.TextBoxFor(m => m.nombre, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.nombre, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.apellido)
+                    @Html.TextBoxFor(m => m.apellido, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.apellido, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.email)
+                    @Html.TextBoxFor(m => m.email, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.email, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.password)
+                    @Html.TextBoxFor(model => model.password, "", new { @class = "form-control", placeholder = "Password", @type = "password" })
+
+                    @Html.ValidationMessageFor(model => model.password, null, new { @class = "text text-danger" })
+
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.confiPassword)
+                    @Html.TextBoxFor(model => model.confiPassword, "", new { @class = "form-control", placeholder = "Password", @type = "password" })
+
+                    @Html.ValidationMessageFor(model => model.confiPassword, null, new { @class = "text text-danger" })
+
+                </div>
+                <br />
+                <div style="text-align:right">
+                    <input value="Guardar" class="btn btn-primary" type="submit">
+                    <input value="Reset" class="btn btn-warning" type="reset">
+                </div>
+            </div>
+        </div>
+
+    }
+</fieldset>
+
+
+

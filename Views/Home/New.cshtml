@@ -1,0 +1,66 @@
+﻿@model F2_201801351.Models.ClienteModel
+@{
+    ViewBag.Title = "New";
+}
+
+<fieldset>
+<legend>
+    Registrar Empresa
+</legend>
+@using (Html.BeginForm("New", "Home", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(modelo => modelo.idCliente)
+            <div>
+                @Html.LabelFor(model => model.nombre)
+                @Html.TextBoxFor(model => model.nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.nombre, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.nit)
+                @Html.TextBoxFor(model => model.nit, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.nit, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.tipoEmpresa)
+                @Html.TextBoxFor(model => model.tipoEmpresa, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tipoEmpresa, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.tamano)
+                @Html.TextBoxFor(model => model.tamano, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tamano, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.noTarjeta)
+                @Html.TextBoxFor(model => model.noTarjeta, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.noTarjeta, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.nombreTarjeta)
+                @Html.TextBoxFor(model => model.nombreTarjeta, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.nombreTarjeta, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.tipoTarjeta)
+                @Html.TextBoxFor(model => model.tipoTarjeta, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.tipoTarjeta, null, new { @class = "text text-danger" })
+            </div>
+            <div>
+                @Html.LabelFor(model => model.CRVTarjeta)
+                @Html.TextBoxFor(model => model.CRVTarjeta, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CRVTarjeta, null, new { @class = "text text-danger" })
+            </div>
+            <br />
+            <div style="text-align:right">
+                <input value="Guardar" class="btn btn-primary" type="submit">
+                <input value="Reset" class="btn btn-warning" type="reset">
+            </div>
+        </div>
+
+    </div>
+}
+</fieldset>
+
+

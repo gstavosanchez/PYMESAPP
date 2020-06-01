@@ -1,0 +1,55 @@
+﻿@model F2_201801351.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<fieldset>
+    <legend>
+
+    </legend>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <h3 style="text-align:center">Inicio de Sesion</h3>
+                        <img src="https://image.flaticon.com/icons/svg/1828/1828503.svg" alt="..." height="175" width="175">
+                        <div class="caption">
+
+                            <p>
+                                <div>
+                                    @Html.LabelFor(model => model.email)
+                                    @Html.TextBoxFor(model => model.email, "", new { @class = "form-control", placeholder = "user@email.com" })
+                                    @Html.ValidationMessageFor(model => model.email, null, new { @class = "text text-danger" })
+                                </div>
+                            </p>
+                            <p>
+                                <div>
+                                    @Html.LabelFor(model => model.password)
+                                    @Html.TextBoxFor(model => model.password, "", new { @class = "form-control", placeholder = "Password", @type = "password" })
+                                    @Html.ValidationMessageFor(model => model.password, null, new { @class = "text text-danger" })
+                                </div>
+                            </p>
+                            <p>
+                                <div>
+                                    <br />
+                                    @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                                </div>
+                                <br />
+                            </p>
+                            <p><input value="Aceptar" class="btn btn-primary" type="submit">  <input value="Reset" class="btn btn-warning" type="reset"></p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    }
+
+</fieldset>
+

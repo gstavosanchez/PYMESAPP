@@ -1,0 +1,52 @@
+﻿@model F2_201801351.Models.EstanteModel
+@{
+    ViewBag.Title = "NewEstante";
+}
+
+    <fieldset>
+        <legend>
+            Nuevo Estante
+        </legend>
+        @using (Html.BeginForm("NewEstante", "Bodega", FormMethod.Post))
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        @Html.LabelFor(m => m.codigo)
+                        @Html.TextBoxFor(m => m.codigo, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.codigo, null, new { @class = "text text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.largo)
+                        @Html.TextBoxFor(m => m.largo, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.largo, null, new { @class = "text text-danger" })
+                    </div>
+                    <div>
+                        @Html.LabelFor(m => m.ancho)
+                        @Html.TextBoxFor(m => m.ancho, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.ancho, null, new { @class = "text text-danger" })
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(m => m.idPasillo)
+                        @Html.TextBoxFor(m => m.idPasillo, "", new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.idPasillo, null, new { @class = "text text-danger" })
+                    </div>
+
+                    <div>
+                        <br />
+                        @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                    </div>
+                    <br />
+                    <div style="text-align:right">
+                        <input value="Guardar" class="btn btn-primary" type="submit">
+                        <input value="Reset" class="btn btn-warning" type="reset">
+                    </div>
+                </div>
+
+            </div>
+
+
+        }
+    </fieldset>
+

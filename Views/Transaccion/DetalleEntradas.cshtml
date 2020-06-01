@@ -1,0 +1,50 @@
+﻿@model List<F2_201801351.Models.DetalleEntrada>
+@{
+    ViewBag.Title = "DetalleEntradas";
+}
+
+<fieldset>
+    <legend>
+        Gestion de entradas
+    </legend>
+    <div class="col-md-12">
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                
+                <th>Proveedor</th>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Costo Producto</th>
+                <th>Precio Unitario</th>
+                <th>Costo Total</th>
+                <th>Id Bodega</th>
+                <th>Id Pasillo</th>
+                <th>Id Estante</th>
+                <th>Id Nivel</th>
+                <th>Opcion</th>
+            </tr>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    
+                    <td>@m.proeveedor</td>
+                    <td>@m.nombreProducto</td>
+                    <td>@m.cantidad</td>
+                    <td>@m.costoProudcto</td>
+                    <td>@m.precioUnitario</td>
+                    <td>@m.costoTotal</td>
+                    <td>@m.idBodega</td>
+                    <td>@m.idPasillo</td>
+                    <td>@m.idEstante</td>
+                    <td>@m.idNivel</td>
+                    <td>
+                        <a class="btn btn-warning" href="~/Transaccion/Update/@m.idDetalleEntrada">Editar</a> <a class="btn btn-danger" href="~/Transaccion/Delete/@m.idDetalleEntrada">Eliminar</a>
+                        
+                    </td>
+                </tr>
+
+            }
+        </table>
+    </div>
+</fieldset>
+

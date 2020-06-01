@@ -1,0 +1,74 @@
+﻿@model F2_201801351.Models.ProductoModel
+@{
+    ViewBag.Title = "New";
+}
+<fieldset>
+    <legend>
+        Crear Producto
+    </legend>
+    @using (Html.BeginForm("New","Producto",FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    @Html.LabelFor(m => m.codigo)
+                    @Html.TextBoxFor(m => m.codigo, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.codigo, null, new { @class = "text text-danger" })
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.codigoBarra)
+                    @Html.TextBoxFor(m => m.codigoBarra, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.codigoBarra, null, new { @class = "text text-danger" })
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.nombre)
+                    @Html.TextBoxFor(m => m.nombre, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.nombre, null, new { @class = "text text-danger" })
+                </div>
+
+
+                <div>
+                    @Html.LabelFor(m => m.descripcion)
+                    @Html.TextBoxFor(m => m.descripcion, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.descripcion, null, new { @class = "text text-danger" })
+                </div>
+
+                <div>
+                    @Html.LabelFor(m => m.clasificacion)
+                    @Html.TextBoxFor(m => m.clasificacion, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.clasificacion, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(m => m.presentacion)
+                    @Html.TextBoxFor(m => m.presentacion, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.presentacion, null, new { @class = "text text-danger" })
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-12">
+                        Estado
+                    </label>
+                    <div class="col-md-10">
+                        <label class="checkbox-inline">
+                            @Html.CheckBox("activo", false) Activo
+                        </label>
+                        <label class="checkbox-inline">
+                            @Html.CheckBox("inactivo", false) Inactivo
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <br />
+                    @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                </div>
+                <br />
+                <div style="text-align:right">
+                    <input value="Guardar" class="btn btn-primary" type="submit">
+                    <input value="Reset" class="btn btn-warning" type="reset">
+                </div>
+            </div>
+        </div>
+    }
+</fieldset>
+

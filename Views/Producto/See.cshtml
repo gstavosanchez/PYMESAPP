@@ -1,0 +1,43 @@
+﻿@model List<F2_201801351.Models.ListaProductoModel>
+@{
+    ViewBag.Title = "See";
+}
+
+<fieldset>
+    <legend>
+       Listado Producto
+    </legend>
+     <div class="col-md-12">
+         <table class="table table-bordered table-responsive table-hover">
+             <tr>
+                 <th>Codigo</th>
+                 <th>Codigo De Barra</th>
+                 <th>Nombre</th>
+                 <th>Descripcion</th>
+                 <th>Clasificacion</th>
+                 <th>Presentacion</th>
+                 <th>Estado</th>
+                 <th>Opcion</th>
+             </tr>
+             @foreach (var m in Model)
+             { 
+         <tr>
+             <td>@m.codigo</td>
+             <td>@m.codigoBarra</td>
+             <td>@m.nombre</td>
+             <td>@m.descripcion</td>
+             <td>@m.clasificacion</td>
+             <td>@m.presentacion</td>
+             <td>@m.estado</td>
+             <td>
+                 <a class="btn btn-danger" href="~/Producto/Delete/@m.id">Eliminar</a>
+             </td>
+         </tr>
+             
+             }
+         </table>
+     </div>
+
+    
+</fieldset>
+

@@ -1,0 +1,83 @@
+﻿@model F2_201801351.Models.ContactoModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<fieldset>
+    <legend>
+        Registrar Contactos
+    </legend>
+    @using (Html.BeginForm("Create", "Home", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    @Html.LabelFor(model => model.nombreComercial)
+                    @Html.TextBoxFor(model => model.nombreComercial, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.nombreComercial, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.apellidoComercial)
+                    @Html.TextBoxFor(model => model.apellidoComercial, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.apellidoComercial, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.emailComercial)
+                    @Html.TextBoxFor(model => model.emailComercial, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.emailComercial, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    <br />
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.nombreGerencial)
+                    @Html.TextBoxFor(model => model.nombreGerencial, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.nombreGerencial, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.apellidoGerencial)
+                    @Html.TextBoxFor(model => model.apellidoGerencial, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.apellidoGerencial, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.emailGerencial)
+                    @Html.TextBoxFor(model => model.emailGerencial, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.emailGerencial, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    <br/>
+                </div>
+
+                <div>
+                    @Html.LabelFor(model => model.nombreAdministradro)
+                    @Html.TextBoxFor(model => model.nombreAdministradro, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.nombreAdministradro, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.apellidoAdministradro)
+                    @Html.TextBoxFor(model => model.apellidoAdministradro, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.apellidoAdministradro, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.emailAdmin)
+                    @Html.TextBoxFor(model => model.emailAdmin, "", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.emailAdmin, null, new { @class = "text text-danger" })
+                </div>
+                <div>
+                    <br />
+                    @Html.ValidationMessage("Error", null, new { @class = "text text-danger" })
+                </div>
+
+                <br />
+                <div style="text-align:right">
+                    <input value="Guardar" class="btn btn-primary" type="submit">
+                    <input value="Reset" class="btn btn-warning" type="reset">
+                </div>
+            </div>
+
+        </div>
+    }
+</fieldset>
+
+

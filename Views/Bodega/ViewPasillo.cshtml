@@ -1,0 +1,62 @@
+﻿@model List<F2_201801351.Models.PasilloModel>
+@{
+    ViewBag.Title = "ViewPasillo";
+}
+    <fieldset>
+        <legend>
+            Pasillo
+
+            @using (Html.BeginForm("ViewPasillo", "Bodega", FormMethod.Post))
+            {
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            @Html.TextBox("parametro", "", new { @class = "form-control", placeholder = "Buscar Bodega" })
+                            <span class="input-group-btn">
+                                <button class="btn btn-info" type="submit">Ir</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+            <br/>
+        </legend>
+
+        <div class="row">
+            @if (Model != null)
+            {
+                foreach (var m in Model)
+                {
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="https://image.flaticon.com/icons/svg/17/17006.svg" alt="..." height="200" width="200">
+                            <div class="caption">
+                                <h3>Codigo Pasillo:@m.codigo</h3>
+                                <p>Dimension: @m.largo X @m.ancho m</p>
+                                <p>Codigo Bodega: @m.idBodega</p>
+                                <p>Nombre Bodega: @m.nombreBodega</p>
+                                <p><a class="btn btn-danger" href="~/Bodega/DeletePasillo/@m.idPasillo">Eliminar</a> </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                }
+            }
+            else
+            {
+           
+
+
+
+            }
+        </div>
+
+    </fieldset>
+
+
+
+

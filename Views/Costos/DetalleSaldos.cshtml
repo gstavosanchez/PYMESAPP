@@ -1,0 +1,37 @@
+﻿@model List<F2_201801351.Models.detalleBodegaProducto>
+@{
+    ViewBag.Title = "DetalleSaldos";
+}
+
+<fieldset>
+    <legend>
+        Productos por Gestion de Saldos
+    </legend>
+    <div class="col-md-12">
+         <table class="table table-bordered table-responsive table-hover">
+             <tr>
+                 <th>Id</th>
+                 <th>IdProducto</th>
+                 <th>Producto</th>
+                 <th>Gestion</th>
+                 <th>Formato de Lote</th>
+                 <th>Opcion</th>
+             </tr>
+             @foreach (var m in Model)
+             { 
+         <tr>
+             <td>@m.idDetalle</td>
+             <td>@m.idProducto</td>
+             <td>@m.nombreProducto</td>
+             <td>@m.gestion</td>
+             <td>@m.formaLote</td>
+             <td>
+                 <a class="btn btn-danger" href="~/Costos/Delete/@m.idDetalle">Eliminar</a>
+             </td>
+         </tr>
+             
+             }
+         </table>
+     </div>
+</fieldset>
+
